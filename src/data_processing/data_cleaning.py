@@ -20,6 +20,7 @@ def load_and_clean(raw_file, cols, text_col, clean_func):
                 rows.append(row)
         df = pd.DataFrame(rows)
 
+    df = df.replace({r'[\r\n]+': ' '}, regex=True)
     # Select columns
     df = df[cols]
 
