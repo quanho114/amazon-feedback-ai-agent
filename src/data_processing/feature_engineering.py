@@ -1,11 +1,16 @@
 def add_features(df):
-    """Add metadata / text features"""
     # Number of exclamations
-    df['num_exclamations'] = df['clean_review'].str.count('!')
+    df['num_exclamations'] = df['clean_review'].apply(lambda x: x.count('!') if isinstance(x, str) else 0)
+
     # Number of questions
-    df['num_questions'] = df['clean_review'].str.count('\?')
+    df['num_questions'] = df['clean_review'].apply(lambda x: x.count('?') if isinstance(x, str) else 0)
+
     # Has uppercase words
-    df['has_uppercase'] = df['clean_review'].apply(lambda x: any(c.isupper() for c in x))
-    # Day of week
-    df['day_of_week'] = df['Review Date'].dt.day_name()
+    df['has_uppercase'] = df['clean_review'].apply(lambda x: any(ch.isupper() for ch in x) if isinstance(x, str) else False)
+
+    # Extract day, month, year
+    df['day'] = df['Review Date'].dt.day
+    df['month'] = df['Review Date'].dt.month
+    df['year'] = df['Review Date'].dt.year
+
     return df

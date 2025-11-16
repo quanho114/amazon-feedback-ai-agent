@@ -1,10 +1,7 @@
 import pandas as pd
 import os
 
-def load_and_clean(raw_file, cols, text_col, clean_func):
-    """
-    Load raw CSV, select columns, drop missing, clean text
-    """
+def load_and_clean(raw_file, selected_cols, text_col, clean_func):
     if not os.path.exists(raw_file):
         raise FileNotFoundError(f"Raw file not found: {raw_file}")
 
@@ -21,22 +18,22 @@ def load_and_clean(raw_file, cols, text_col, clean_func):
         df = pd.DataFrame(rows)
 
     df = df.replace({r'[\r\n]+': ' '}, regex=True)
-    # Select columns
-    df = df[cols]
+    df = df[selected_cols]
+    
+    # Drop missing text and Rating
+    df = df.dropna(subset=[text_col, 'Rating'])
 
-    # Drop missing text
-    df = df.dropna(subset=[text_col])
-
-    # Clean text column
-    df['clean_review'] = df[text_col].apply(clean_func)
+    # Clean text column, convert non-str to empty string
+    df['clean_review'] = df[text_col].apply(lambda x: clean_func(x) if isinstance(x, str) else "")
 
     # Convert Rating to int
-    df['Rating'] = df['Rating'].str.extract(r'(\d)').astype(int)
+    df['Rating'] = df['Rating'].astype(str).str.extract(r'(\d)').astype(int)
 
     # Convert Review Date
     df['Review Date'] = pd.to_datetime(df['Review Date'], errors='coerce')
+    df = df.dropna(subset=['Review Date'])
 
-    # Add review length
-    df['review_length'] = df['clean_review'].apply(lambda x: len(x.split()))
+    # Add review length safely
+    df['review_length'] = df['clean_review'].apply(lambda x: len(x.split()) if isinstance(x, str) else 0)
 
     return df
