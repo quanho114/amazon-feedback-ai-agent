@@ -1,11 +1,13 @@
 pandas>=2.0.0
 numpy>=1.25.0
 scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.13.0
+nltk>=3.8.1
+emoji>=2.3.0
+joblib>=1.3.2
 torch>=2.1.0
 transformers>=4.57.1
 sentence-transformers>=2.2.2
 datasets>=2.14.0
 accelerate>=0.26.0
-nltk>=3.8.1
-emoji>=2.3.0
-joblib>=1.3.2
