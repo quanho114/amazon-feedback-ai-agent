@@ -5,7 +5,7 @@ import sys
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 sys.path.append(BASE_DIR)
 
-from utils.text_cleaning import clean_text
+from src.utils.text_cleaning import clean_text
 from src.data_processing.data_cleaning import load_and_clean
 from src.data_processing.feature_engineering import add_features
 

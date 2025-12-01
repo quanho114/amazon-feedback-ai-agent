@@ -1,13 +1,43 @@
+# --- DATA ANALYSIS & VIZ ---
 pandas>=2.0.0
 numpy>=1.25.0
-scikit-learn>=1.3.0
 matplotlib>=3.7.0
 seaborn>=0.13.0
+wordcloud
+openpyxl
+tabulate
+
+# --- AI AGENT ---
+langchain
+langchain-core
+langchain-openai
+langchain-experimental
+langchain-community
+langgraph
+python-dotenv
+
+# --- RAG & VECTOR DB ---
+chromadb
+langchain-chroma
+sentence-transformers>=2.2.2
+
+# --- NLP CORE ---
 nltk>=3.8.1
 emoji>=2.3.0
-joblib>=1.3.2
+textblob
+
+# --- DEEP LEARNING ---
 torch>=2.1.0
-transformers>=4.57.1
-sentence-transformers>=2.2.2
-datasets>=2.14.0
+# tensorflow  
+transformers>=4.30.0
 accelerate>=0.26.0
+datasets>=2.14.0
+joblib>=1.3.2
+
+# --- WEB UI ---
+streamlit
+duckdb
+textblob          # Thư viện NLP siêu nhẹ để check sentiment nhanh
+sentence-transformers # Để tạo vector embedding miễn phí   # Vector Database chạy local
+langchain_huggingface
+tf-keras
