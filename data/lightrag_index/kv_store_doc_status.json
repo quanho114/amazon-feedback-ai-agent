@@ -1,0 +1,101 @@
+{
+  "doc-d2dc996e10b67e54609d4e74e4c9bf43": {
+    "status": "failed",
+    "error_msg": "'C[1/1]: chunk-d2dc996e10b67e54609d4e74e4c9bf43: choices'",
+    "content_summary": "Review Title: A Store That Doesn't Want to Sell Anything\nRating: 1 Stars\nDate: September 16, 2024\nCountry: US\nSentiment: negative\nReview Content: I registered on the website, tried to order a laptop, entered all the details, but instead of charging m...",
+    "content_length": 828,
+    "created_at": "2025-12-06T16:55:32.512035+00:00",
+    "updated_at": "2025-12-06T16:57:54.720531+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235532_ad8e3242",
+    "metadata": {
+      "processing_start_time": 1765040264,
+      "processing_end_time": 1765040274
+    },
+    "chunks_list": []
+  },
+  "doc-4844b9001f893f47bf3a5b61ea9472c0": {
+    "status": "failed",
+    "error_msg": "'C[1/1]: chunk-4844b9001f893f47bf3a5b61ea9472c0: choices'",
+    "content_summary": "Review Title: Had multiple orders one turned up and…\nRating: 1 Stars\nDate: September 16, 2024\nCountry: GB\nSentiment: negative\nReview Content: Had multiple orders one turned up and driver had to phone as no door number on packaging, then waited all da...",
+    "content_length": 528,
+    "created_at": "2025-12-06T16:55:44.196988+00:00",
+    "updated_at": "2025-12-06T16:58:00.177669+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235544_c7caa3c6",
+    "metadata": {
+      "processing_start_time": 1765040264,
+      "processing_end_time": 1765040280
+    },
+    "chunks_list": []
+  },
+  "doc-29360265573aa2caf30f29c79166dd18": {
+    "status": "failed",
+    "error_msg": "C[1/1]: chunk-29360265573aa2caf30f29c79166dd18: expected string or bytes-like object, got 'NoneType'",
+    "content_summary": "Review Title: I informed these reprobates\nRating: 1 Stars\nDate: September 16, 2024\nCountry: GB\nSentiment: negative\nReview Content: I informed these reprobates that I WOULD NOT BE IN as I was going to visit a sick relative, they told me they were goin...",
+    "content_length": 834,
+    "created_at": "2025-12-06T16:55:57.597001+00:00",
+    "updated_at": "2025-12-06T16:58:16.614399+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235557_09f91d24",
+    "metadata": {
+      "processing_start_time": 1765040274,
+      "processing_end_time": 1765040296
+    },
+    "chunks_list": []
+  },
+  "doc-a73ad962a7f4f9573d4d00d7415c801a": {
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-a73ad962a7f4f9573d4d00d7415c801a"
+    ],
+    "content_summary": "Review Title: Advertise one price then increase it on website\nRating: 1 Stars\nDate: September 17, 2024\nCountry: AU\nSentiment: negative\nReview Content: I have bought from Amazon before and no problems being very happy with the service and price. Amazo...",
+    "content_length": 694,
+    "created_at": "2025-12-06T16:56:14.924660+00:00",
+    "updated_at": "2025-12-06T16:58:00.181673+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235614_9907b690",
+    "metadata": {
+      "processing_start_time": 1765040280
+    }
+  },
+  "doc-7ed94f7b55a48397ebf8a96e8cc065b0": {
+    "status": "processing",
+    "chunks_count": 1,
+    "chunks_list": [
+      "chunk-7ed94f7b55a48397ebf8a96e8cc065b0"
+    ],
+    "content_summary": "Review Title: If I could give a lower rate I would\nRating: 1 Stars\nDate: September 16, 2024\nCountry: GB\nSentiment: negative\nReview Content: If I could give a lower rate I would! I cancelled my Amazon Prime in February and subsequently found that they...",
+    "content_length": 770,
+    "created_at": "2025-12-06T16:56:36.209527+00:00",
+    "updated_at": "2025-12-06T16:58:16.617013+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235636_70dbe44f",
+    "metadata": {
+      "processing_start_time": 1765040296
+    }
+  },
+  "doc-36a5d8b283903d7533c9a2715bd15825": {
+    "status": "pending",
+    "content_summary": "Review Title: Terrible, I had to hang up and call back \nRating: 1 Stars\nDate: August 16, 2024\nCountry: US\nSentiment: negative\nReview Content: Terrible you get customer service reps that are clearly home, you hear children and family scenarios in the ...",
+    "content_length": 484,
+    "created_at": "2025-12-06T16:57:05.605756+00:00",
+    "updated_at": "2025-12-06T16:57:44.303813+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235705_45c0cdcb",
+    "error_msg": "",
+    "metadata": {},
+    "chunks_list": []
+  },
+  "doc-44c63da4088328f703a933d37b2c0681": {
+    "status": "pending",
+    "content_summary": "Review Title: Yet again \nRating: 1 Stars\nDate: September 16, 2024\nCountry: US\nSentiment: negative\nReview Content: Amazon has a way of tainting a great product due to their inability to separate used goods from the new. I received a great name blush t...",
+    "content_length": 569,
+    "created_at": "2025-12-06T16:57:44.299244+00:00",
+    "updated_at": "2025-12-06T16:57:44.299273+00:00",
+    "file_path": "unknown_source",
+    "track_id": "insert_20251206_235744_501aed16",
+    "chunks_list": []
+  }
+}

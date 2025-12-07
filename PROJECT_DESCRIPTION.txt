@@ -1,0 +1,312 @@
+================================================================================
+AMAZON FEEDBACK AI AGENT - PROJECT DESCRIPTION
+================================================================================
+
+PROJECT TITLE:
+AI-Powered Customer Feedback Analysis Platform
+Multi-Agent System | Machine Learning | RAG | Data Analytics
+
+================================================================================
+OVERVIEW
+================================================================================
+
+An intelligent multi-agent system for automated analysis of Amazon customer 
+feedback using LangGraph, Machine Learning, and Retrieval-Augmented Generation.
+The system processes 21,000+ reviews with 90% sentiment classification accuracy
+and provides actionable business insights through an interactive dashboard.
+
+================================================================================
+KEY FEATURES
+================================================================================
+
+1. MULTI-AGENT AI SYSTEM (LangGraph)
+   - 6 Specialized Agents: Chat, Sentiment, Analyst, RAG, Insight, Summarize
+   - Intelligent Supervisor for query routing
+   - State management and agent orchestration
+   - Pattern-based decision making
+
+2. MACHINE LEARNING PIPELINE
+   - SVM Sentiment Classification (90% accuracy)
+   - TF-IDF Vectorization
+   - Model Benchmarking (SVM vs Rating-based vs TextBlob)
+   - Real-time prediction on 21K+ reviews
+
+3. RETRIEVAL-AUGMENTED GENERATION (RAG)
+   - Vector database (ChromaDB)
+   - Semantic search with Sentence Transformers
+   - Context-aware response generation
+   - Similarity-based document retrieval
+
+4. INTERACTIVE DASHBOARD
+   - 5 Data Visualizations (Pie, Bar, Stacked Bar charts)
+   - Real-time KPI tracking
+   - Statistical analysis (mean, median, distribution)
+   - Business intelligence insights
+
+5. NATURAL LANGUAGE INTERFACE
+   - LLM-powered conversational AI
+   - Chat history management
+   - Tutorial with sample prompts
+   - Multi-session support
+
+================================================================================
+TECHNICAL STACK
+================================================================================
+
+BACKEND:
+- Python 3.13
+- FastAPI (REST API with 10+ endpoints)
+- LangGraph (Multi-agent orchestration)
+- Scikit-learn (SVM model)
+- ChromaDB (Vector database)
+- Sentence Transformers (Embeddings)
+- Pandas (Data processing)
+
+FRONTEND:
+- React 18
+- Tailwind CSS
+- Recharts (Data visualization)
+- Lucide Icons
+- Markdown rendering
+
+AI/ML:
+- OpenAI API (GPT models)
+- Linear SVM (Sentiment classification)
+- TF-IDF Vectorization
+- Semantic search algorithms
+
+================================================================================
+SYSTEM ARCHITECTURE
+================================================================================
+
+┌─────────────┐
+│   User UI   │ (React Frontend)
+└──────┬──────┘
+       │
+┌──────▼──────┐
+│  FastAPI    │ (REST API)
+└──────┬──────┘
+       │
+┌──────▼──────────────────────────┐
+│     LangGraph Supervisor        │
+│  (Intelligent Query Routing)    │
+└──────┬──────────────────────────┘
+       │
+┌──────▼──────────────────────────┐
+│        6 AI Agents              │
+│  ┌────────────────────────────┐ │
+│  │ Chat    │ Sentiment │ RAG  │ │
+│  │ Analyst │ Insight   │ Sum. │ │
+│  └────────────────────────────┘ │
+└──────┬──────────────────────────┘
+       │
+┌──────▼──────────────────────────┐
+│   Data Layer                    │
+│  - SVM Model (90% accuracy)     │
+│  - Vector Store (ChromaDB)      │
+│  - Session Management           │
+└─────────────────────────────────┘
+
+================================================================================
+DATA SCIENCE COMPONENTS
+================================================================================
+
+1. DATA PROCESSING & ETL
+   - CSV ingestion with multiple encoding strategies
+   - Data cleaning and validation
+   - Feature engineering (text preprocessing)
+   - Real-time data transformation
+
+2. MACHINE LEARNING
+   - Sentiment Classification: Linear SVM
+   - Training: TF-IDF + SVM pipeline
+   - Evaluation: 90% accuracy, F1-score: 0.8877
+   - Benchmarking: Compared 3 methods (SVM, Rating, TextBlob)
+
+3. STATISTICAL ANALYSIS
+   - Descriptive statistics (mean, median, mode)
+   - Distribution analysis
+   - Correlation studies
+   - Trend detection
+
+4. DATA VISUALIZATION
+   - Sentiment distribution (Pie chart)
+   - Rating distribution (Bar chart)
+   - Sentiment by rating (Stacked bar)
+   - Time-series trends
+   - Interactive dashboards
+
+================================================================================
+AI/ML ENGINEERING COMPONENTS
+================================================================================
+
+1. MULTI-AGENT SYSTEM
+   - Agent Architecture: 6 specialized workers + 1 supervisor
+   - Routing Logic: Pattern matching + LLM-based classification
+   - State Management: Shared state across agents
+   - Communication: Message passing between agents
+
+2. NATURAL LANGUAGE PROCESSING
+   - Text Classification: Sentiment analysis
+   - Semantic Search: Vector similarity
+   - Text Generation: LLM-powered responses
+   - Intent Recognition: Query understanding
+
+3. LARGE LANGUAGE MODELS
+   - OpenAI Integration: GPT-based agents
+   - Prompt Engineering: Optimized prompts per agent
+   - Context Management: Conversation history
+   - Response Generation: Natural language outputs
+
+4. RETRIEVAL-AUGMENTED GENERATION
+   - Vector Embeddings: Sentence Transformers
+   - Similarity Search: Cosine similarity
+   - Context Injection: Retrieved docs → LLM
+   - Hybrid Search: Keyword + semantic
+
+================================================================================
+PERFORMANCE METRICS
+================================================================================
+
+MODEL PERFORMANCE:
+- Sentiment Accuracy: 90.10%
+- F1-Score: 0.8877
+- Processing Speed: ~3.5ms per review
+- Dataset: 21,055 reviews
+
+SYSTEM PERFORMANCE:
+- API Response Time: <2s average
+- Concurrent Users: Supports multiple sessions
+- Data Processing: 21K+ reviews in <40s
+- RAG Search: <1s per query
+
+================================================================================
+KEY ACHIEVEMENTS
+================================================================================
+
+✓ Built production-ready multi-agent AI system
+✓ Achieved 90% sentiment classification accuracy
+✓ Processed 21,000+ customer reviews
+✓ Implemented RAG with vector search
+✓ Designed interactive analytics dashboard
+✓ Integrated 6 specialized AI agents
+✓ Developed full-stack application (Backend + Frontend)
+✓ Optimized API with background task processing
+
+================================================================================
+USE CASES
+================================================================================
+
+1. BUSINESS INTELLIGENCE
+   - Automated sentiment analysis
+   - Customer feedback monitoring
+   - Trend detection and alerts
+   - Actionable insights generation
+
+2. CUSTOMER SERVICE
+   - Quick issue identification
+   - Common complaint analysis
+   - Response prioritization
+   - Service improvement recommendations
+
+3. PRODUCT MANAGEMENT
+   - Feature feedback analysis
+   - User satisfaction tracking
+   - Competitive analysis
+   - Product roadmap planning
+
+4. MARKETING
+   - Brand sentiment monitoring
+   - Campaign effectiveness
+   - Customer perception analysis
+   - Market research automation
+
+================================================================================
+TECHNICAL HIGHLIGHTS
+================================================================================
+
+1. SCALABILITY
+   - Modular agent architecture
+   - Stateless API design
+   - Efficient data processing
+   - Background task handling
+
+2. PERFORMANCE
+   - Smart caching mechanisms
+   - Optimized vector search
+   - Batch processing support
+   - Async operations
+
+3. USER EXPERIENCE
+   - Intuitive chat interface
+   - Real-time visualizations
+   - Dark/Light mode
+   - Responsive design
+
+4. MAINTAINABILITY
+   - Clean code architecture
+   - Comprehensive documentation
+   - Modular components
+   - Easy to extend
+
+================================================================================
+FUTURE ENHANCEMENTS
+================================================================================
+
+- Export features (PDF, CSV, PNG)
+- Advanced filtering (date, rating, keywords)
+- Keyword/Topic extraction (Word cloud)
+- Multi-language support
+- Real-time collaboration
+- Scheduled reports
+- API access for developers
+
+================================================================================
+TEAM
+================================================================================
+
+Ho Minh Quan - DS/AIE
+- Multi-agent system architecture
+- Machine learning pipeline
+- RAG implementation
+
+Tran Nguyen Thanh Phong - DA/DS
+- Data processing & analysis
+- Dashboard development
+- Statistical modeling
+
+Institution: Ho Chi Minh University of Science (HCMUS)
+Program: Final Year Project
+
+================================================================================
+KEYWORDS FOR CV/PORTFOLIO
+================================================================================
+
+AI/ML: Multi-Agent Systems, LangGraph, RAG, LLM, NLP, Prompt Engineering,
+       Sentiment Analysis, Vector Embeddings, Semantic Search
+
+Data Science: Machine Learning, SVM, TF-IDF, Statistical Analysis, 
+              Data Visualization, ETL Pipeline, Business Intelligence
+
+Engineering: FastAPI, REST API, React, Full-Stack Development, 
+             System Architecture, Production Deployment
+
+================================================================================
+RECOMMENDED FOR POSITIONS
+================================================================================
+
+✓ AI Engineer (Perfect fit)
+✓ ML Engineer (Perfect fit)
+✓ Data Scientist (Good fit)
+✓ Full-Stack AI Engineer (Perfect fit)
+✓ NLP Engineer (Good fit)
+
+================================================================================
+PROJECT LINKS
+================================================================================
+
+GitHub: [Add your GitHub repo link]
+Demo: [Add demo video/live demo link]
+Documentation: See /docs folder
+
+================================================================================

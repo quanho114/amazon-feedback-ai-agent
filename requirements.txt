@@ -1,43 +1,51 @@
-# --- DATA ANALYSIS & VIZ ---
+# === CORE DEPENDENCIES ===
+python-dotenv>=1.0.0
+
+# === WEB FRAMEWORK (FastAPI) ===
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-multipart>=0.0.6
+
+# === DATA ANALYSIS ===
 pandas>=2.0.0
 numpy>=1.25.0
+
+# === VISUALIZATION ===
 matplotlib>=3.7.0
+plotly>=5.18.0
 seaborn>=0.13.0
-wordcloud
-openpyxl
-tabulate
+wordcloud>=1.9.0
 
-# --- AI AGENT ---
-langchain
-langchain-core
-langchain-openai
-langchain-experimental
-langchain-community
-langgraph
-python-dotenv
+# === AI AGENT FRAMEWORK ===
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-openai>=0.0.5
+langchain-experimental>=0.0.47
+langgraph>=0.0.20
 
-# --- RAG & VECTOR DB ---
-chromadb
-langchain-chroma
+# === RAG & VECTOR DB ===
+chromadb>=0.4.0
+langchain-chroma>=0.1.0
 sentence-transformers>=2.2.2
+langchain-huggingface>=0.0.1
 
-# --- NLP CORE ---
+# === KNOWLEDGE GRAPH RAG (Optional) ===
+# lightrag-hku>=0.0.8  # Disabled - API unstable
+
+# === NLP ===
 nltk>=3.8.1
-emoji>=2.3.0
-textblob
+textblob>=0.17.1
+vaderSentiment>=3.3.2
 
-# --- DEEP LEARNING ---
+# === ML Models ===
+scikit-learn>=1.3.0
+
+# === DEEP LEARNING (Optional) ===
 torch>=2.1.0
-# tensorflow  
 transformers>=4.30.0
-accelerate>=0.26.0
-datasets>=2.14.0
-joblib>=1.3.2
 
-# --- WEB UI ---
-streamlit
-duckdb
-textblob          # Thư viện NLP siêu nhẹ để check sentiment nhanh
-sentence-transformers # Để tạo vector embedding miễn phí   # Vector Database chạy local
-langchain_huggingface
-tf-keras
+# === WEB UI ===
+streamlit>=1.28.0
+
+# === UTILITIES ===
+openpyxl>=3.1.0
