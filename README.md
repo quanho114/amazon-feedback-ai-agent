@@ -1,274 +1,332 @@
-# 🛒 Amazon Feedback AI Agent
-### Multi-Agent System for Customer Review Analysis
+# 🤖 Amazon Feedback AI Agent
 
-[![Tech Stack](https://img.shields.io/badge/Backend-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Tech Stack](https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=black)](https://react.dev/)
-[![Tech Stack](https://img.shields.io/badge/AI-LangGraph-FF6B6B?logo=ai&logoColor=white)](https://langchain.com/)
+> Multi-Agent AI System for Automated Customer Feedback Analysis
+
+[![Python](https://img.shields.io/badge/Python-3.13-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.104-green.svg)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18-61dafb.svg)](https://reactjs.org/)
+[![LangGraph](https://img.shields.io/badge/LangGraph-Latest-orange.svg)](https://github.com/langchain-ai/langgraph)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-> **Full-stack AI application** với 6 workers multi-agent system, phân tích cảm xúc, RAG search, và data visualization.
+An intelligent multi-agent system powered by LangGraph, Machine Learning, and RAG for automated analysis of Amazon customer feedback. Achieves **90% sentiment classification accuracy** on 21,000+ reviews.
+
+![Dashboard Preview](docs/screenshots/dashboard.png)
 
 ---
 
 ## ✨ Features
 
-🤖 **6-Agent System** - Chat, Sentiment, RAG, Analyst, Insight, Summarize  
-📊 **8 Chart Types** - Pie, Bar, Line, Scatter, Area, Radar, Treemap, Composed  
-🔍 **Vector Search** - ChromaDB với semantic search  
-⚡ **Real-time Chat** - Streaming responses với LangGraph  
-📈 **Analytics Dashboard** - Sentiment stats, trends, forecasting  
-🎨 **Modern UI** - React + Tailwind CSS với glassmorphism design  
+### 🤖 **Multi-Agent AI System**
+- **6 Specialized Agents:** Chat, Sentiment, Analyst, RAG, Insight, Summarize
+- **Intelligent Routing:** Supervisor agent with pattern matching + LLM classification
+- **State Management:** Shared state across agents using LangGraph
+
+### 🧠 **Machine Learning**
+- **SVM Sentiment Model:** 90% accuracy, F1-score: 0.8877
+- **Model Benchmarking:** Compared SVM vs Rating-based vs TextBlob
+- **Real-time Processing:** <3.5ms per prediction
+
+### 🔍 **Retrieval-Augmented Generation (RAG)**
+- **Vector Search:** ChromaDB with Sentence Transformers
+- **Semantic Search:** Context-aware document retrieval
+- **Hybrid Search:** Keyword + semantic similarity
+
+### 📊 **Interactive Dashboard**
+- **5 Visualizations:** Pie, Bar, Stacked Bar charts
+- **Real-time Analytics:** KPI tracking, trend analysis
+- **Business Intelligence:** Actionable insights generation
+
+### 💬 **Natural Language Interface**
+- **Chat History:** Multi-session support with sidebar
+- **Tutorial System:** Sample prompts and examples
+- **Dark/Light Mode:** Customizable UI theme
 
 ---
 
-## 🚀 Quick Start (1 Click)
+## 🏗️ Architecture
 
-### Windows:
-```cmd
-start.bat
 ```
-
-### Manual:
-```bash
-# Terminal 1 - Backend
-python api.py
-
-# Terminal 2 - Frontend
-cd frontend
-npm run dev
+┌─────────────┐
+│   React UI  │ (Frontend)
+└──────┬──────┘
+       │
+┌──────▼──────┐
+│  FastAPI    │ (REST API)
+└──────┬──────┘
+       │
+┌──────▼──────────────────────────┐
+│     LangGraph Supervisor        │
+│  (Intelligent Query Routing)    │
+└──────┬──────────────────────────┘
+       │
+┌──────▼──────────────────────────┐
+│        6 AI Agents              │
+│  ┌────────────────────────────┐ │
+│  │ Chat    │ Sentiment │ RAG  │ │
+│  │ Analyst │ Insight   │ Sum. │ │
+│  └────────────────────────────┘ │
+└──────┬──────────────────────────┘
+       │
+┌──────▼──────────────────────────┐
+│   Data Layer                    │
+│  - SVM Model (90% accuracy)     │
+│  - Vector Store (ChromaDB)      │
+│  - Session Management           │
+└─────────────────────────────────┘
 ```
-
-→ Mở trình duyệt: **http://localhost:3000**
 
 ---
 
-## 📦 Installation
+## 🚀 Quick Start
 
-### 1. Clone Repository
+### Prerequisites
+
+- Python 3.13+
+- Node.js 18+
+- OpenAI API Key (or compatible LLM API)
+
+### Installation
+
+1. **Clone the repository**
 ```bash
-git clone https://github.com/quanho114/amazon-feedback-ai-agent.git
+git clone https://github.com/YOUR_USERNAME/amazon-feedback-ai-agent.git
 cd amazon-feedback-ai-agent
 ```
 
-### 2. Backend Setup
+2. **Backend Setup**
 ```bash
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Configure environment
+# Create .env file
 cp .env.example .env
-# Edit .env và thêm API keys
+# Edit .env and add your API keys
 ```
 
-### 3. Frontend Setup
+3. **Frontend Setup**
 ```bash
 cd frontend
 npm install
-cd ..
 ```
 
-### 4. Environment Variables
-Tạo file `.env`:
-```env
-MEGALLM_API_KEY=your_api_key_here
-MEGALLM_BASE_URL=https://ai.megallm.io/v1
-MEGALLM_MODEL=gemini-pro
+4. **Run the Application**
+
+Terminal 1 (Backend):
+```bash
+python api.py
+```
+
+Terminal 2 (Frontend):
+```bash
+cd frontend
+npm run dev
+```
+
+5. **Open Browser**
+```
+http://localhost:5173
 ```
 
 ---
 
-## 🏗️ Project Structure
+## 📖 Usage
+
+### 1. Upload Data
+- Click **"Upload Data"** tab
+- Upload CSV file with customer reviews
+- System automatically analyzes sentiment (SVM model)
+
+### 2. Chat with AI
+- Click **"AI Chat"** tab
+- Ask questions like:
+  - "Analyze sentiment distribution"
+  - "Draw a pie chart for ratings"
+  - "Find reviews about delivery problems"
+  - "Give me business insights"
+
+### 3. View Dashboard
+- Click **"Analytics"** tab
+- Explore 5 interactive visualizations
+- View real-time KPIs and insights
+
+### 4. Examples
+- Click **"Examples"** button for sample prompts
+- Click any prompt to auto-fill input
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+- **Python 3.13**
+- **FastAPI** - REST API framework
+- **LangGraph** - Multi-agent orchestration
+- **Scikit-learn** - SVM sentiment model
+- **ChromaDB** - Vector database
+- **Sentence Transformers** - Text embeddings
+- **Pandas** - Data processing
+
+### Frontend
+- **React 18** - UI framework
+- **Tailwind CSS** - Styling
+- **Recharts** - Data visualization
+- **Lucide Icons** - Icon library
+- **Vite** - Build tool
+
+### AI/ML
+- **OpenAI API** - LLM integration
+- **Linear SVM** - Sentiment classification (90% accuracy)
+- **TF-IDF** - Text vectorization
+- **RAG** - Retrieval-augmented generation
+
+---
+
+## 📊 Performance Metrics
+
+| Metric | Value |
+|--------|-------|
+| Sentiment Accuracy | 90.10% |
+| F1-Score | 0.8877 |
+| Processing Speed | ~3.5ms/review |
+| Dataset Size | 21,055 reviews |
+| API Response Time | <2s average |
+| Agents | 6 specialized |
+
+---
+
+## 📁 Project Structure
 
 ```
 amazon-feedback-ai-agent/
+├── api.py                      # FastAPI backend
+├── requirements.txt            # Python dependencies
+├── .env.example               # Environment variables template
 │
-├── 🔧 Backend (FastAPI)
-│   ├── api.py                      # REST API server
-│   ├── requirements.txt            # Python dependencies
-│   └── src/
-│       ├── agents/                 # Multi-agent system
-│       │   ├── graph.py           # LangGraph workflow
-│       │   ├── state.py           # Agent state management
-│       │   ├── tools.py           # Data processing tools
-│       │   └── nodes/             # 6 AI workers
-│       │       ├── chat_node.py
-│       │       ├── sentiment_node.py
-│       │       ├── analyst_node.py
-│       │       ├── rag_node.py
-│       │       ├── insight_node.py
-│       │       └── summarize_node.py
-│       ├── rag/                    # Vector search (ChromaDB)
-│       ├── analytics/              # Statistics & forecasting
-│       └── utils/                  # Utilities & caching
+├── src/
+│   ├── agents/
+│   │   ├── graph.py           # LangGraph supervisor
+│   │   ├── state.py           # Agent state management
+│   │   ├── tools.py           # Shared tools
+│   │   └── nodes/             # 6 AI agent nodes
+│   │       ├── chat_node.py
+│   │       ├── sentiment_node.py
+│   │       ├── analyst_node.py
+│   │       ├── rag_node.py
+│   │       ├── insight_node.py
+│   │       └── summarize_node.py
+│   │
+│   ├── analytics/
+│   │   └── sentiment_model.py # SVM sentiment classifier
+│   │
+│   └── rag/
+│       ├── vector_search.py   # RAG implementation
+│       └── advanced_rag.py    # Advanced RAG features
 │
-├── 🎨 Frontend (React + Vite)
-│   └── frontend/
-│       ├── src/
-│       │   ├── components/         # React components
-│       │   │   ├── ChatInterface.jsx
-│       │   │   ├── ChartDisplay.jsx    # 8 chart types
-│       │   │   ├── Dashboard.jsx
-│       │   │   └── FileUpload.jsx
-│       │   ├── services/           # API integration
-│       │   └── App.jsx             # Main application
-│       ├── package.json
-│       └── vite.config.js
+├── frontend/
+│   ├── src/
+│   │   ├── components/        # React components
+│   │   │   ├── ChatInterface.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── FileUpload.jsx
+│   │   │   └── ChartDisplay.jsx
+│   │   ├── services/
+│   │   │   └── api.js         # API client
+│   │   └── App.jsx            # Main app
+│   │
+│   ├── package.json
+│   └── vite.config.js
 │
-├── 🐳 Deployment
-│   ├── Dockerfile                  # Docker image
-│   ├── docker-compose.yml          # Multi-container setup
-│   ├── nginx.conf                  # Reverse proxy
-│   └── deploy.sh                   # Deploy script
+├── models/
+│   ├── sentiment_svm.pkl      # Trained SVM model
+│   └── sentiment_vectorizer.pkl
 │
-├── 📁 Data
-│   └── data/
-│       ├── raw/                    # CSV uploads
-│       ├── processed/              # Processed data
-│       └── vector_store/           # ChromaDB storage
+├── data/
+│   ├── raw/                   # Raw CSV files
+│   ├── processed/             # Processed data
+│   └── vector_store/          # ChromaDB storage
 │
-└── 📚 Documentation
-    ├── README.md                   # This file
-    ├── DEPLOYMENT.md               # Deploy guide
-    └── PROJECT_AUDIT.md            # Code review
+└── docs/
+    ├── ARCHITECTURE.md        # System architecture
+    ├── DEPLOYMENT.md          # Deployment guide
+    └── PROJECT_OVERVIEW.md    # Project documentation
 ```
 
 ---
 
-## 🎯 Tech Stack
+## 🎯 Use Cases
 
-| Layer | Technology | Purpose |
-|-------|------------|---------|
-| **Backend** | FastAPI | REST API server |
-| **Frontend** | React 18 + Vite | Modern UI framework |
-| **Styling** | Tailwind CSS | Utility-first CSS |
-| **Charts** | Recharts | Data visualization |
-| **AI Framework** | LangGraph | Multi-agent orchestration |
-| **LLM** | OpenAI/Gemini | Language models |
-| **Vector DB** | ChromaDB | Semantic search |
-| **Embeddings** | HuggingFace | Text embeddings |
+### Business Intelligence
+- Automated sentiment analysis
+- Customer feedback monitoring
+- Trend detection and alerts
+- Actionable insights generation
 
----
+### Customer Service
+- Quick issue identification
+- Common complaint analysis
+- Response prioritization
+- Service improvement recommendations
 
-## 📊 API Endpoints
-
-### Backend (Port 8000)
-
-```
-GET  /                      # Health check
-GET  /api/health           # Detailed health status
-GET  /api/data-status      # Check if data loaded
-
-POST /api/upload           # Upload CSV file
-POST /api/chat             # Chat with AI agent
-GET  /api/sentiment        # Get sentiment analysis
-GET  /api/analytics        # Get analytics data
-```
-
-### Frontend (Port 3000)
-
-```
-/                          # Main application
-├── Upload Data            # CSV upload tab
-├── AI Chat                # Chat interface
-└── Analytics              # Dashboard & charts
-```
+### Product Management
+- Feature feedback analysis
+- User satisfaction tracking
+- Competitive analysis
+- Product roadmap planning
 
 ---
 
-## 🧪 Usage Example
+## 🔮 Future Enhancements
 
-### 1. Upload CSV Data
-```javascript
-// Upload file qua UI hoặc API
-POST http://localhost:8000/api/upload
-Content-Type: multipart/form-data
-
-file: your_reviews.csv
-```
-
-### 2. Chat với AI
-```javascript
-POST http://localhost:8000/api/chat
-Content-Type: application/json
-
-{
-  "message": "Có bao nhiêu review tích cực?"
-}
-```
-
-### 3. Vẽ Chart
-```javascript
-// Trong chat, gửi:
-"Vẽ biểu đồ phân bố sentiment"
-"Vẽ scatter chart rating vs độ dài review"
-"Vẽ area chart xu hướng theo tháng"
-```
+- [ ] Export features (PDF, CSV, PNG)
+- [ ] Advanced filtering (date, rating, keywords)
+- [ ] Keyword/Topic extraction (Word cloud)
+- [ ] Multi-language support
+- [ ] Real-time collaboration
+- [ ] Scheduled reports
+- [ ] API access for developers
 
 ---
 
-## 🚀 Deployment
+## 👥 Authors
 
-### Option 1: Docker (Recommended)
-```bash
-docker-compose up -d
-```
-→ Access: http://localhost
+**Ho Minh Quan** - DS/AIE  
+Final Year Student, HCMUS  
+[GitHub](https://github.com/YOUR_GITHUB) | [Email](mailto:your.email@example.com)
 
-### Option 2: Railway (Free Cloud)
-1. Push code lên GitHub
-2. Vào https://railway.app
-3. Deploy from GitHub repo
-4. Thêm environment variables
-5. Nhận public URL
-
-### Option 3: VPS Ubuntu
-```bash
-./deploy.sh vps
-```
-
-📖 **Chi tiết**: Xem file [DEPLOYMENT.md](DEPLOYMENT.md)
+**Tran Nguyen Thanh Phong** - DA/DS  
+Final Year Student, HCMUS  
+[GitHub](https://github.com/PHONG_GITHUB) | [Email](mailto:phong.email@example.com)
 
 ---
 
-## 🤝 Contributing
+## 📄 License
 
-Contributions welcome! Please:
-1. Fork repo
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
-
----
-
-## 📝 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-## 👤 Author
-
-**Quan Ho**
-- GitHub: [@quanho114](https://github.com/quanho114)
-- Repository: [amazon-feedback-ai-agent](https://github.com/quanho114/amazon-feedback-ai-agent)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-- [LangChain](https://langchain.com/) - AI framework
-- [FastAPI](https://fastapi.tiangolo.com/) - Backend framework
-- [React](https://react.dev/) - Frontend library
-- [Recharts](https://recharts.org/) - Chart library
-- [ChromaDB](https://www.trychroma.com/) - Vector database
+- **LangGraph** - Multi-agent framework
+- **OpenAI** - LLM API
+- **ChromaDB** - Vector database
+- **Sentence Transformers** - Text embeddings
+- **HCMUS** - Academic support
 
 ---
 
-## 📞 Support
+## 📞 Contact
 
-Có vấn đề? Tạo [Issue](https://github.com/quanho114/amazon-feedback-ai-agent/issues) trên GitHub!
+For questions or feedback, please contact us via:
+- GitHub Issues
+- Email: [your.email@example.com](mailto:your.email@example.com)
 
 ---
 
-**⭐ Star repo nếu thấy hữu ích!**
+<div align="center">
+
+**⭐ Star this repo if you find it helpful!**
+
+Made with ❤️ by Quan & Phong
+
+</div>
